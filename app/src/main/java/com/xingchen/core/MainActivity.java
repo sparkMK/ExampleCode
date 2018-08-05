@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +26,17 @@ public class MainActivity extends AppCompatActivity {
     String currentTime;
     String[] PLANETS = {"a", "b", "c"};
     BottomDialog bottomDialog;
+    ImageView imageView;
+
+    TranslateAnimation mHiddenAction;
+    TranslateAnimation mShowAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imageView = (ImageView)findViewById(R.id.showView);
         /**
          * https://github.com/wangpeiming110/WheelView
          */
@@ -44,10 +53,29 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.showBottomDialog).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                showBottomDialog();
+               // showBottomDialog();
+                if(imageView.getVisibility() == View.GONE){
+                    showView();
+                }else{
+                    hiddenView();
+                }
             }
         });
+       // commonShow();
 
+        // 显示动画
+        mShowAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,
+                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+                -1.0f, Animation.RELATIVE_TO_SELF, -0.0f);
+        mShowAction.setRepeatMode(Animation.REVERSE);
+        mShowAction.setDuration(500);
+
+        // 隐藏动画
+        mHiddenAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF,
+                0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
+                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
+                -1.0f);
+        mHiddenAction.setDuration(500);
     }
 
     private void showBottomDialog(){
@@ -103,5 +131,21 @@ public class MainActivity extends AppCompatActivity {
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), R.style.smart_lock_common_timedialog)
                 .setYmd(true);
         customBuilder.createDialog().show();
+    }
+
+    private void commonShow(){
+        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+        imageView.setBackgroundResource(R.drawable.selector_pickerview_btn);
+        imageView.startAnimation(animation);
+    }
+
+    private void showView(){
+        imageView.startAnimation(mShowAction);
+        imageView.setVisibility(View.VISIBLE);
+    }
+
+    private void hiddenView(){
+        imageView.startAnimation(mHiddenAction);
+        imageView.setVisibility(View.GONE);
     }
 }

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xingchen.core.MainActivity">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/showBottomDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="showBottomDialog"/>
+
+    <ImageView
+        android:id="@+id/showView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round" />
 
     <com.xingchen.core.widget.WheelView
         android:id="@+id/wheel_view"
@@ -27,5 +33,4 @@
         app:isLoop="false"
         app:textColorOuter="@android:color/darker_gray"
         />
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
