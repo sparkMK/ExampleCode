@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.xingchen.core.sample.EasySignSeekBarActivity"
+    tools:showIn="@layout/activity_easy_sign_seek_bar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.zhouyou.view.seekbar.SignSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_margin="8dp"
+            app:ssb_section_text_position="bottom_sides"
+            app:ssb_show_progress_in_float="false"
+            app:ssb_show_section_mark="false"
+            app:ssb_show_section_text="true"
+            app:ssb_show_sign="true"
+            app:ssb_show_thumb_text="false"
+            app:ssb_sign_arrow_height="5dp"
+            app:ssb_sign_arrow_width="10dp"
+            app:ssb_sign_border_color="@color/color_red"
+            app:ssb_sign_border_size="1dp"
+            app:ssb_sign_color="@color/color_gray"
+            app:ssb_sign_show_border="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:gravity="bottom"
+            android:text="@string/appbar_scrolling_view_behavior"/>
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>
