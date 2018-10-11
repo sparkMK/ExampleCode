@@ -1,7 +1,9 @@
 package com.xingchen.core;
 
-import android.support.v7.app.AppCompatActivity;
+import android.Manifest;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +18,12 @@ import com.xingchen.core.utils.DateUtil;
 import com.xingchen.core.widget.BottomDialog;
 import com.xingchen.core.widget.WheelView;
 import com.xingchen.core.widget.timediolog.TimeDialog;
+import com.yanzhenjie.permission.Action;
+import com.yanzhenjie.permission.AndPermission;
 
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.showBottomDialog).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-               // showBottomDialog();
+                showBottomDialog();
                 if(imageView.getVisibility() == View.GONE){
                     showView();
                 }else{
@@ -125,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = DateUtil.getCalendarByString("2017-08-20", "yyyy-MM-dd");
 
         TimeDialog customBuilder = new TimeDialog(this, new TimeDialog.OnDateSetListener() {
+            @Override
             public void onDateSet(int year, int monthOfYear, int dayOfMonth) {
                 currentTime = DateUtil.getSystemDateFormat(year, monthOfYear, dayOfMonth);
             }
@@ -147,5 +153,30 @@ public class MainActivity extends AppCompatActivity {
     private void hiddenView(){
         imageView.startAnimation(mHiddenAction);
         imageView.setVisibility(View.GONE);
+        applyPermission();
+    }
+
+    private void applyPermission(){
+
+        AndPermission.with(this).runtime().permission(Manifest.permission.CAMERA)
+                .onGranted(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> permissions) {
+
+                        Toast.makeText(MainActivity.this, "onGranted", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .onDenied(new Action<List<String>>() {
+                    @Override
+                    public void onAction(@NonNull List<String> permissions) {
+
+                        Toast.makeText(MainActivity.this, "onDenied", Toast.LENGTH_SHORT).show();
+
+                        /*if (AndPermission.hasAlwaysDeniedPermission(MainActivity.this, permissions)) {
+                            //showSettingDialog(MainActivity.this, permissions);
+                        }*/
+                    }
+                }).start();
+
     }
 }
