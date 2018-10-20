@@ -39,4 +39,7 @@ dependencies {
     //MagicWindow SDK
     compile 'cn.magicwindow:MagicWindowSDK:4.2.180523'
 
+    //EasySignSeekBar
+    compile 'com.zhouyou:signseekbar:1.0.6'
+
 }
