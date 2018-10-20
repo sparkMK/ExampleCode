@@ -8,6 +8,8 @@ import com.xingchen.core.app.BaseActivity;
 
 /**
  * Created by xingchen on 2018/7/14.
+ *
+ * https://github.com/Bigkoo/Android-PickerView
  */
 
 public class PickerViewActivity extends BaseActivity {
