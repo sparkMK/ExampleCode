@@ -41,7 +41,7 @@ dependencies {
 
     //EasySignSeekBar
     compile 'com.zhouyou:signseekbar:1.0.6'
-    
+
     //EasySignSeekBar
     compile 'com.zhouyou:signseekbar:1.0.6'
 
