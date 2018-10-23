@@ -10,4 +10,18 @@
         android:text="下载"
         android:onClick="download"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="单任务下载"
+        android:onClick="singleDownload"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="多任务下载"
+        android:onClick="miltrixDownload"/>
+
 </LinearLayout>
