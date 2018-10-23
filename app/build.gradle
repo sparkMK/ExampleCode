@@ -39,9 +39,11 @@ dependencies {
     //MagicWindow SDK
     compile 'cn.magicwindow:MagicWindowSDK:4.2.180523'
 
-    implementation 'com.yanzhenjie:permission:2.0.0-rc12'
-    implementation 'pub.devrel:easypermissions:1.3.0'
-
     //EasySignSeekBar
     compile 'com.zhouyou:signseekbar:1.0.6'
+    
+    //EasySignSeekBar
+    compile 'com.zhouyou:signseekbar:1.0.6'
+
+
 }
