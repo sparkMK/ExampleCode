@@ -24,15 +24,19 @@
         <activity android:name=".sample.LoginActivity">
 
         </activity>
-        <activity android:name=".filedownloader.FileDownloaderActivity">
+        <activity android:name=".QMUI.QMUIActivity">
+
+        </activity>
+        <activity android:name=".widget.expressview.test.ExpressViewMainActivity">
+
+        </activity>
+
+        <activity android:name=".widget.FlycoTabLayout.ui.SimpleHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".filedownloader.FileDownloaderMiltrixActivity">
-
         </activity>
     </application>
 
