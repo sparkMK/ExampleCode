@@ -38,6 +38,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".widget.FlycoTabLayout.ui.SlidingTabActivity">
+
+        </activity>
+        <activity android:name=".widget.FlycoTabLayout.ui.CommonTabActivity">
+
+        </activity>
+        <activity android:name=".widget.FlycoTabLayout.ui.SegmentTabActivity">
+
+        </activity>
     </application>
 
 </manifest>
