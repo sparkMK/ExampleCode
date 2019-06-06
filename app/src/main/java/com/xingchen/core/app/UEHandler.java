@@ -3,8 +3,16 @@ package com.xingchen.core.app;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
+
+import com.xingchen.core.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -145,4 +153,6 @@ public class UEHandler implements Thread.UncaughtExceptionHandler {
 	public String getDataTime(SimpleDateFormat dataFormat){
 		return dataFormat.format(new Date());
 	}
+
+
 }

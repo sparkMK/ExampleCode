@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titlebar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="19dp"
+        android:background="@color/umeng_divide" />
+
+    <com.xingchen.core.views.Item
+        android:id="@+id/home_uapp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="20dp"
+        app:umicon="@drawable/um_app"
+        app:umtitle="测试一下滑轮" />
+
+    <com.xingchen.core.views.Item
+        android:id="@+id/home_game"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/home_uapp"
+        app:umicon="@drawable/um_ugame"
+        app:umtitle="统计UGame" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/home_game"
+        android:layout_marginTop="39dp"
+        android:background="@color/umeng_divide" />
+
+    <com.xingchen.core.views.Item
+        android:id="@+id/home_push"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/home_game"
+        android:layout_marginTop="40dp"
+        app:umicon="@drawable/um_upush"
+        app:umtitle="推送" />
+
+    <com.xingchen.core.views.Item
+        android:id="@+id/home_share"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/home_push"
+        app:umicon="@drawable/um_share"
+        app:umtitle="分享" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/home_share"
+        android:layout_marginTop="39dp"
+        android:background="@color/umeng_divide" />
+
+
+</RelativeLayout>

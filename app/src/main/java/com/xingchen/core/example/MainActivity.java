@@ -1,6 +1,6 @@
-package com.xingchen.core;
+package com.xingchen.core.example;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,15 +12,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.xingchen.core.R;
 import com.xingchen.core.utils.DateUtil;
-import com.xingchen.core.widget.BottomDialog;
-import com.xingchen.core.widget.WheelView;
+import com.xingchen.core.widget.bottomDialog.BottomDialog;
+import com.xingchen.core.widget.bottomDialog.WheelView;
 import com.xingchen.core.widget.timediolog.TimeDialog;
 
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
     String TAG = "MainActivity";
     String currentTime;

@@ -1,5 +1,6 @@
 package com.xingchen.core.PickerView;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -12,7 +13,7 @@ import com.xingchen.core.app.BaseActivity;
  * https://github.com/Bigkoo/Android-PickerView
  */
 
-public class PickerViewActivity extends BaseActivity {
+public class PickerViewActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

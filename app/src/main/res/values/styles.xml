@@ -39,4 +39,18 @@
         <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
+
+    <!--无状态栏无标题栏-->
+    <style name="AppThemeNoTitleFullscreen" parent="@style/AppTheme">
+        <!-- 隐藏状态栏 -->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 隐藏标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!--无标题栏-->
+    <style name="AppThemeNoTitle" parent="@style/AppTheme">
+        <!-- 隐藏标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

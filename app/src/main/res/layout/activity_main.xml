@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher_round" />
 
-    <com.xingchen.core.widget.WheelView
+    <com.xingchen.core.widget.bottomDialog.WheelView
         android:id="@+id/wheel_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
